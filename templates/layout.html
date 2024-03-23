@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="static\layout.css">
+</head>
+
+<body>
+                            <!-- This is Header Area -->
+
+    <header class="header">
+        <a href="/" class="logo">Smart Attendance</a>
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class="fas fa-bars" id="menu-icon"></i>
+            <i class="fa-solid fa-x" id="close-icon"></i>
+        </label>
+        <div class="navbars">
+            <a href="/" {% if active_page == 'home' %}class="active"{% endif %}>Home</a>
+            <a href="/dashboard" {% if active_page == 'dashboard' %}class="active"{% endif %}>Dashboard</a>
+            <a href="/contactus" {% if active_page == 'contactus' %}class="active"{% endif %}>Contact Us</a>
+            <a href="/about" {% if active_page == 'about' %}class="active"{% endif %}>About</a>
+        </div>   
+        <div class="login-signup">
+            {% if 'email' in session %}
+                <button type="submit" style="margin: auto;"><a href="/logout">Logout</a></button>
+            {% else %}
+                <button type="submit"><a href="/login">Login</a></button>
+                <button type="submit"><a href="/register">Register</a></button>    
+            {% endif %}
+        </div>
+    </header>
+
+                            <!-- This is Main Contant Area -->
+
+
+    {% block content %}
+        <!-- All outside of This block content render where it can be extended code write. -->
+    {% endblock %}
+    
+
+                            <!-- This is Footer Area -->
+
+    <footer>
+        <div class="footer-box">
+            <p>Copyright © 2024 <a href="facerecog.com">Face-Recog</a> | Theme Desined By Ratan Kumar</p>
+        </div>
+    </footer>
+</body>
+
+</html>
