@@ -119,7 +119,7 @@ span {
     .main-container {
         flex-direction: column;
         width: 80vw;
-        height: 50vh;
+        height: 60vh;
     }
     h1 {
         font-size: 25px;
