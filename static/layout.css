@@ -170,7 +170,7 @@ button a {
     }
 
     #check:checked~.navbars{
-        height: 360px;
+        height: 380px;
     }
 
     #check:checked~.login-signup{
@@ -186,7 +186,7 @@ button a {
 
     .login-signup {
         position: absolute;
-        top: 500%;
+        top: 535%;
         left: 0;
         width: 100%;
         height: 0;
