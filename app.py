@@ -50,7 +50,9 @@ with app.app_context():
 
 @app.route('/')
 def index():
-  return render_template('home.html', active_page='home')
+  return render_template('home.html',
+                         active_page='home',
+                         title='Home | SmartAttendance')
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -99,7 +101,8 @@ def dashboard():
     user = User.query.filter_by(email=session['email']).first()
     return render_template('dashboard.html',
                            active_page='dashboard',
-                           user=user)
+                           user=user,
+                           title='Dashboard')
   else:
     flash('You need to login first.', 'error')
     return redirect('/login')
@@ -125,12 +128,14 @@ def contactus():
     flash('Message Sent Successfully.', 'success')
     return redirect('/contactus')
 
-  return render_template('contactus.html', active_page='contactus')
+  return render_template('contactus.html',
+                         active_page='contactus',
+                         title='Contact Us')
 
 
 @app.route('/about')
 def about():
-  return render_template('about.html', active_page='about')
+  return render_template('about.html', active_page='about', title='About')
 
 
 if __name__ == '__main__':
